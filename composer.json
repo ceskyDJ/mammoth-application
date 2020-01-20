@@ -1,0 +1,25 @@
+{
+    "name": "mammoth/application",
+    "description": "Template application for Mammoth framework",
+    "type": "project",
+    "require": {
+        "php": ">=7.4",
+        "mammoth/mammoth": "dev-master",
+        "ext-mbstring": "*"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Michal ŠMAHEL",
+            "email": "admin@ceskydj.cz"
+        }
+    ],
+    "minimum-stability": "dev",
+    "scripts": {
+        "post-package-install": [
+            "echo 'Thanks for installation.'",
+            "echo 'Make sure log/ and temp/ directories are writeable for web server.'",
+            "echo 'Set up database and development domain in local-config.ini.'"
+        ]
+    }
+}

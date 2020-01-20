@@ -1,0 +1,18 @@
+# Allow public access
+Allow from all
+
+# Turn off directory structure listing
+<IfModule mod_autoindex.c>
+  Options -Indexes
+</IfModule>
+
+<IfModule mod_rewrite.c>
+  # Turn on rewrite engine and set base to root
+  RewriteEngine on
+  RewriteBase /
+
+  # Redirect all to index.php (exept requests to files with specified type)
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule !\.(css|js|php|phtml|html|ico|zip|rar|png|jpg|gif|pdf|otf|eot|svg|ttf|woff|woff2)$ index.php [L]
+</IfModule>
